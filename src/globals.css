@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 144 42% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 144 42% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 144 42% 9%;
+    --primary: 153 38% 37%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 153 38% 95%;
+    --secondary-foreground: 153 38% 37%;
+    --muted: 60 5% 96%;
+    --muted-foreground: 144 10% 40%;
+    --accent: 153 38% 95%;
+    --accent-foreground: 153 38% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 60 5% 90%;
+    --input: 60 5% 90%;
+    --ring: 153 38% 37%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 144 42% 6%;
+    --foreground: 60 5% 96%;
+    --card: 144 42% 9%;
+    --card-foreground: 60 5% 96%;
+    --popover: 144 42% 9%;
+    --popover-foreground: 60 5% 96%;
+    --primary: 153 45% 55%;
+    --primary-foreground: 144 42% 9%;
+    --secondary: 144 35% 15%;
+    --secondary-foreground: 153 45% 55%;
+    --muted: 144 35% 15%;
+    --muted-foreground: 60 5% 65%;
+    --accent: 144 35% 15%;
+    --accent-foreground: 153 45% 55%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 144 35% 18%;
+    --input: 144 35% 18%;
+    --ring: 153 45% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Leaflet Map Popup Styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+/* Smooth Animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(15, 46, 29, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Chart Styles */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Progress Bar Animation */
+.progress-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Map Layer Controls */
+.timber-map-controls {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Premium Card Hover */
+.premium-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(45, 106, 79, 0.15);
+}
