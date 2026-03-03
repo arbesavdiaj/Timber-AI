@@ -1,0 +1,48 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Report title"
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "management_plan",
+        "health_assessment",
+        "harvest_schedule",
+        "risk_analysis"
+      ],
+      "description": "Type of report"
+    },
+    "zones_included": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Zone IDs included"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Executive summary"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI recommendations"
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Key metrics"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["generating", "ready", "archived"],
+      "description": "Report status"
+    }
+  },
+  "required": ["title", "report_type", "status"]
+}

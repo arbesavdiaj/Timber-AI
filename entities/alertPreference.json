@@ -1,0 +1,55 @@
+{
+  "name": "AlertPreference",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User email"
+    },
+    "disease_threshold": {
+      "type": "number",
+      "default": 40,
+      "description": "Disease likelihood threshold (%)"
+    },
+    "fire_risk_threshold": {
+      "type": "string",
+      "enum": ["moderate", "high", "extreme"],
+      "default": "high",
+      "description": "Fire risk level to alert on"
+    },
+    "drought_threshold": {
+      "type": "string",
+      "enum": ["moderate", "high", "severe"],
+      "default": "high",
+      "description": "Drought stress level to alert on"
+    },
+    "health_score_threshold": {
+      "type": "number",
+      "default": 60,
+      "description": "Minimum health score before alert"
+    },
+    "pest_risk_threshold": {
+      "type": "string",
+      "enum": ["low", "moderate", "high"],
+      "default": "moderate",
+      "description": "Pest risk level to alert on"
+    },
+    "enable_email_alerts": {
+      "type": "boolean",
+      "default": true,
+      "description": "Send email notifications"
+    },
+    "enable_critical_only": {
+      "type": "boolean",
+      "default": false,
+      "description": "Only send critical severity alerts"
+    },
+    "notification_frequency": {
+      "type": "string",
+      "enum": ["immediate", "hourly", "daily"],
+      "default": "immediate",
+      "description": "How often to send notifications"
+    }
+  },
+  "required": ["user_email"]
+}

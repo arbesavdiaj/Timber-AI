@@ -1,0 +1,74 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "zone_id": {
+      "type": "string",
+      "description": "Associated forest zone"
+    },
+    "zone_name": {
+      "type": "string",
+      "description": "Zone name for display"
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "fire_risk",
+        "sensor_critical",
+        "health_decline",
+        "weather_warning",
+        "system"
+      ],
+      "description": "Type of alert"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Alert severity level"
+    },
+    "title": {
+      "type": "string",
+      "description": "Alert title"
+    },
+    "message": {
+      "type": "string",
+      "description": "Detailed alert message"
+    },
+    "metric_value": {
+      "type": "number",
+      "description": "Current metric value"
+    },
+    "threshold_value": {
+      "type": "number",
+      "description": "Threshold that was breached"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "acknowledged", "resolved"],
+      "default": "active",
+      "description": "Alert status"
+    },
+    "acknowledged_by": {
+      "type": "string",
+      "description": "User who acknowledged alert"
+    },
+    "acknowledged_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Acknowledgment timestamp"
+    },
+    "email_sent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether email notification was sent"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated recommendations"
+    }
+  },
+  "required": ["zone_id", "alert_type", "severity", "title", "message"]
+}

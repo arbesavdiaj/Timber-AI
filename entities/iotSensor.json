@@ -1,0 +1,64 @@
+{
+  "name": "IoTSensor",
+  "type": "object",
+  "properties": {
+    "sensor_id": {
+      "type": "string",
+      "description": "Unique sensor identifier"
+    },
+    "zone_id": {
+      "type": "string",
+      "description": "Associated forest zone"
+    },
+    "sensor_type": {
+      "type": "string",
+      "enum": [
+        "soil_moisture",
+        "temperature",
+        "humidity",
+        "light",
+        "ph",
+        "air_quality"
+      ],
+      "description": "Type of sensor"
+    },
+    "location": {
+      "type": "object",
+      "description": "Sensor GPS coordinates"
+    },
+    "current_reading": {
+      "type": "number",
+      "description": "Current sensor value"
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measurement"
+    },
+    "battery_level": {
+      "type": "number",
+      "description": "Battery percentage"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["online", "offline", "warning", "error"],
+      "description": "Sensor operational status"
+    },
+    "last_reading_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last data transmission"
+    },
+    "reading_history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Historical readings"
+    },
+    "thresholds": {
+      "type": "object",
+      "description": "Alert thresholds"
+    }
+  },
+  "required": ["sensor_id", "zone_id", "sensor_type", "status"]
+}

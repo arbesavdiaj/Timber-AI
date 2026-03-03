@@ -1,0 +1,51 @@
+{
+  "name": "WeatherData",
+  "type": "object",
+  "properties": {
+    "zone_id": {
+      "type": "string",
+      "description": "Associated forest zone"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data collection timestamp"
+    },
+    "temperature": {
+      "type": "number",
+      "description": "Temperature in Fahrenheit"
+    },
+    "humidity": {
+      "type": "number",
+      "description": "Relative humidity percentage"
+    },
+    "wind_speed": {
+      "type": "number",
+      "description": "Wind speed in mph"
+    },
+    "precipitation": {
+      "type": "number",
+      "description": "Precipitation in inches"
+    },
+    "fire_weather_index": {
+      "type": "number",
+      "description": "Calculated fire risk index 0-100"
+    },
+    "conditions": {
+      "type": "string",
+      "description": "Weather conditions description"
+    },
+    "forecast_24h": {
+      "type": "object",
+      "description": "24-hour forecast data"
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Weather alerts"
+    }
+  },
+  "required": ["zone_id", "timestamp"]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "ForestZone",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Zone name"
+    },
+    "area_acres": {
+      "type": "number",
+      "description": "Area in acres"
+    },
+    "health_score": {
+      "type": "number",
+      "description": "AI health score 0-100"
+    },
+    "canopy_density": {
+      "type": "number",
+      "description": "Canopy density percentage"
+    },
+    "drought_stress": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "severe"],
+      "description": "Drought stress level"
+    },
+    "pest_risk": {
+      "type": "string",
+      "enum": ["minimal", "low", "moderate", "high"],
+      "description": "Pest/disease risk"
+    },
+    "fire_risk": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "extreme"],
+      "description": "Wildfire risk level"
+    },
+    "recommended_action": {
+      "type": "string",
+      "description": "AI recommended action"
+    },
+    "timber_yield_estimate": {
+      "type": "number",
+      "description": "Estimated timber yield in board feet"
+    },
+    "carbon_sequestration": {
+      "type": "number",
+      "description": "CO2 tons sequestered annually"
+    },
+    "coordinates": {
+      "type": "object",
+      "description": "Zone center coordinates"
+    }
+  },
+  "required": ["name", "area_acres", "health_score"]
+}

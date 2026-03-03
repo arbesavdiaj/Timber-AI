@@ -1,0 +1,29 @@
+{
+  "name": "DataUpload",
+  "type": "object",
+  "properties": {
+    "filename": {
+      "type": "string",
+      "description": "Uploaded filename"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to uploaded file"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": ["drone_imagery", "csv", "shapefile", "satellite"],
+      "description": "Type of data"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "processing", "completed", "failed"],
+      "description": "Processing status"
+    },
+    "analysis_results": {
+      "type": "object",
+      "description": "AI analysis results"
+    }
+  },
+  "required": ["filename", "file_type", "status"]
+}

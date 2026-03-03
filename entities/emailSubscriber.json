@@ -1,0 +1,19 @@
+{
+  "name": "EmailSubscriber",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Subscriber email"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "interest": {
+      "type": "string",
+      "description": "Area of interest"
+    }
+  },
+  "required": ["email"]
+}
